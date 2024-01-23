@@ -57,6 +57,6 @@ jobs:
           host:  ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           password: ${{ secrets.PRIVATE_SSH_KEY }}
-          script: "pm2 start pm2.config.js"
+          script: "cd /www/server && pm2 start pm2.config.js"
 
         
