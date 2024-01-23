@@ -50,3 +50,13 @@ jobs:
           ARGS: "-avzr --delete"
           # 上传到服务器目标目录
           TARGET: "/www/server"
+        # relaod server
+      - name: Reload Server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host:  ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.PRIVATE_SSH_KEY }}
+          script: "pm2 start pm2.config.js"
+
+        
